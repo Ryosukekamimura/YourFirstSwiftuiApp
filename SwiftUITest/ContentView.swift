@@ -10,15 +10,56 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ZStack{
+
+        VStack{
             Spacer()
-            Text("Kamimura")
+            HStack{
+                Spacer()
+                Image("apple")
+                    .resizable()
+                    .frame(width:100 , height: 100)
+                Spacer()
+                Image("apple")
+                    .resizable()
+                    .frame(width:100 , height: 100)
+                Spacer()
+                Image("apple")
+                    .resizable()
+                    .frame(width:100 , height: 100)
+                Spacer()
+            }
             Spacer()
-            Image("apple")
-                .resizable()
-                .frame(width: 50, height: 50)
+            HStack{
+                   Spacer()
+                Image("apple")
+                    .resizable()
+                    .frame(width:100 , height: 100)
+                Spacer()
+                Image("apple")
+                    .resizable()
+                    .frame(width:100 , height: 100)
+                Spacer()
+                Image("apple")
+                    .resizable()
+                    .frame(width:100 , height: 100)
+                Spacer()
+            }
             Spacer()
-            Text("Hello")
+            HStack{
+                Spacer()
+                Image("apple")
+                    .resizable()
+                    .frame(width:100 , height: 100)
+                Spacer()
+                Image("apple")
+                    .resizable()
+                    .frame(width:100 , height: 100)
+                Spacer()
+                Image("apple")
+                    .resizable()
+                    .frame(width:100 , height: 100)
+                Spacer()
+            }
             Spacer()
         }
 
