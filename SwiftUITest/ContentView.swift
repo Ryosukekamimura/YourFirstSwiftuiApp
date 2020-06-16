@@ -10,27 +10,18 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack{
-            HStack(alignment: .top, spacing: 20, content: {
-                Text("apple.com")
-                
-                Image("lemon")
-                    .resizable()
-                    .frame(width: 100, height: 100)
-                Button(action: {
-                    //TODO:
-                }, label: {
-                    Image("apple")
-                        .renderingMode(.original)
-                        .resizable()
-                        .frame(width: 100, height: 100)
-                })
-                Spacer()
-            })
+        ZStack{
             Spacer()
-            Text("by kamimura ryousuke")
+            Text("Kamimura")
+            Spacer()
+            Image("apple")
+                .resizable()
+                .frame(width: 50, height: 50)
+            Spacer()
+            Text("Hello")
+            Spacer()
         }
-        
+
     }
 }
 
