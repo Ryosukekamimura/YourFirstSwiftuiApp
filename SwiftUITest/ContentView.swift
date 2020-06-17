@@ -11,13 +11,27 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         
-        Text("Modify ME!")
-            .font(.headline)
-            .fontWeight(.heavy)
-            .foregroundColor(Color.pink)
-            .multilineTextAlignment(.center)
-            .padding(.horizontal, 23.0)
+        VStack{
+            Image("pinkbuilding")
+                .resizable()
+                .cornerRadius(30)
+                .padding()
+                .shadow(radius: 10)
+            
+            Text("pink building is totally amazing.")
+                .fontWeight(.heavy)
+                .foregroundColor(Color.pink)
+                .font(.largeTitle)
+                .multilineTextAlignment(.center)
+                .shadow(color: .black, radius: 0.1, x: 2, y: 1)
+            
+        }
 
+        
+        
+        
+        
+        
     }
 }
 
