@@ -13,6 +13,8 @@
 		920ADFA724997CF5004E160B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 920ADFA624997CF5004E160B /* Assets.xcassets */; };
 		920ADFAA24997CF5004E160B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 920ADFA924997CF5004E160B /* Preview Assets.xcassets */; };
 		920ADFAD24997CF5004E160B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 920ADFAB24997CF5004E160B /* LaunchScreen.storyboard */; };
+		9298B6EA249B5CD700A50F48 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298B6E9249B5CD700A50F48 /* GameOverView.swift */; };
+		9298B6EC249B623800A50F48 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298B6EB249B623800A50F48 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		920ADFA924997CF5004E160B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		920ADFAC24997CF5004E160B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		920ADFAE24997CF5004E160B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9298B6E9249B5CD700A50F48 /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
+		9298B6EB249B623800A50F48 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +63,12 @@
 				920ADFA024997CF4004E160B /* AppDelegate.swift */,
 				920ADFA224997CF4004E160B /* SceneDelegate.swift */,
 				920ADFA424997CF4004E160B /* ContentView.swift */,
+				9298B6EB249B623800A50F48 /* CardView.swift */,
 				920ADFA624997CF5004E160B /* Assets.xcassets */,
 				920ADFAB24997CF5004E160B /* LaunchScreen.storyboard */,
 				920ADFAE24997CF5004E160B /* Info.plist */,
 				920ADFA824997CF5004E160B /* Preview Content */,
+				9298B6E9249B5CD700A50F48 /* GameOverView.swift */,
 			);
 			path = SwiftUITest;
 			sourceTree = "<group>";
@@ -148,7 +154,9 @@
 			files = (
 				920ADFA124997CF4004E160B /* AppDelegate.swift in Sources */,
 				920ADFA324997CF4004E160B /* SceneDelegate.swift in Sources */,
+				9298B6EA249B5CD700A50F48 /* GameOverView.swift in Sources */,
 				920ADFA524997CF4004E160B /* ContentView.swift in Sources */,
+				9298B6EC249B623800A50F48 /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

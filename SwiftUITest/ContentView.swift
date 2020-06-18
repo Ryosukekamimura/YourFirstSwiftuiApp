@@ -10,10 +10,13 @@ import SwiftUI
 
 struct ContentView: View {
     
-    private var symbols = ["apple", "flutter", "python"]
+    @State private var symbols = ["apple", "flutter", "python"]
+    @State private var backgroundList = Array(repeating: Color.white, count: 9)
     
-    @State private var numbers = [0, 0, 0]
-    @State private var credits = 1000
+    @State private var numbers = Array(repeating: 0, count:9)
+    @State private var credits = 200
+    private var betAmount = 5
+    
     
     var body: some View {
         ZStack{
@@ -50,30 +53,40 @@ struct ContentView: View {
                 Spacer()
                 
                 //Credits
-                HStack{
-                    Spacer()
-                    
-                    Image("\(self.symbols[numbers[0]])").resizable()
-                        .aspectRatio(1, contentMode: .fit)
-                        .background(Color.white.opacity(0.5))
-                        .cornerRadius(20)
-                    
-                    Image("\(self.symbols[numbers[1]])").resizable()
+                VStack{
+                    HStack{
+                        Spacer()
+                        CardView(symbol: $symbols[numbers[0]], background: $backgroundList[0])
+                        CardView(symbol: $symbols[numbers[1]], background: $backgroundList[1])
+                        CardView(symbol: $symbols[numbers[2]], background: $backgroundList[2])
+                        Spacer()
                         
-                        .aspectRatio(1, contentMode: .fit)
-                        .background(Color.white.opacity(0.5))
-                        .cornerRadius(20)
-                    Image("\(self.symbols[numbers[2]])").resizable()
-                        .aspectRatio(1, contentMode: .fit)
-                        .background(Color.white.opacity(0.5))
-                        .cornerRadius(20)
-                    Spacer()
-                    
+                    }
+                    HStack{
+                        Spacer()
+                        CardView(symbol: $symbols[numbers[3]], background: $backgroundList[3])
+                        CardView(symbol: $symbols[numbers[4]], background: $backgroundList[4])
+                        CardView(symbol: $symbols[numbers[5]], background: $backgroundList[5])
+                        Spacer()
+                        
+                    }
+                    HStack{
+                        Spacer()
+                        CardView(symbol: $symbols[numbers[6]], background: $backgroundList[6])
+                        CardView(symbol: $symbols[numbers[7]], background: $backgroundList[7])
+                        CardView(symbol: $symbols[numbers[8]], background: $backgroundList[8])
+                        Spacer()
+                        
+                    }
                 }
+            
                 Spacer()
                 
                 Button(action: {
-                    self.credits += 1
+                    
+                   // processResults(isMax)
+            
+                    
                 }) { Text("Spin")
                     .bold()
                     .foregroundColor(Color.white)
@@ -90,7 +103,80 @@ struct ContentView: View {
             
         }
         
+        func processResults(_ isMax:Bool = false){
+            //Set all backgrounds
+            self.backgroundList = self.backgroundList.map{
+                _ in Color.white
+            }
+            
+            
+            if isMax{
+                //Spin all cards
+                self.numbers = self.numbers.map{
+                    _ in Int.random(in: 0...self.numbers.count-1)
+                }
+            }else{
+                self.numbers[3] = Int.random(in: 0...self.numbers.count-1)
+                self.numbers[4] = Int.random(in: 0...self.numbers.count-1)
+                self.numbers[5] = Int.random(in: 0...self.numbers.count-1)
+            }
+            
+            
+            
+            self.credits += 1
+            
+            
+            
+            
+            
+            
+            //IF WIN
+            
+            processWin(isMax)
+            
+            
+        }
         
+        
+        
+        func processWin(_ isMax:Bool = false){
+            
+            
+            var matches = 0
+            if !isMax{
+                //Processing for single spin
+                if self.numbers[3] == self.numbers[4] && self.numbers[4] == self.numbers[5]{
+                    //Won
+                    matches += 1
+                    // Change Color to Green
+                    self.backgroundList[3] = Color.green
+                    self.backgroundList[4] = Color.green
+                    self.backgroundList[5] = Color.green
+                    
+                }
+                
+                
+            }
+            
+            
+            
+            
+            if self.numbers[0] == self.numbers[1] && self.numbers[1] == self.numbers[2]{
+                
+                //Won
+                self.credits += self.betAmount * 10
+                
+                // Change Color to Green
+                self.backgroundList = self.backgroundList.map{
+                    _ in Color.green
+                }
+                
+            }
+            //IF LOSE
+            else{
+                self.credits -= self.betAmount
+            }
+        }
         
     }
 }
